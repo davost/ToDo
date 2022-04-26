@@ -4,12 +4,20 @@ public class TodoItemTask {
 
     private int id;
     private Person assignee = new Person();
-    private boolean assigned(String assignee) {
-        return true;
-    };
+    private boolean assigned;
     TodoItem toDo = new TodoItem();
 
+    public  String getSummary() {
+        return "{id: " + id + " assigned to " + assignee + " assigned? " + assigned + "}";
+    }
+
     public TodoItemTask() {
+    }
+
+    public TodoItemTask(int id, Person assignee, TodoItem toDo) {
+        this.id = id;
+        setAssignee(assignee);
+        this.toDo = toDo;
     }
 
     public int getId() {
@@ -26,10 +34,16 @@ public class TodoItemTask {
 
     public void setAssignee(Person assignee) {
         this.assignee = assignee;
+
+        if (this.assignee != null){
+            setAssigned(true);
+        } else {
+            setAssigned(false);
+        }
     }
 
     public boolean isAssigned() {
-        return true;
+        return assigned;
     }
 
     public void setAssigned(boolean assigned) {
@@ -41,6 +55,11 @@ public class TodoItemTask {
     }
 
     public void setToDo(TodoItem toDo) {
+        if (toDo == null) throw new IllegalArgumentException("TodoItem must not be null");
         this.toDo = toDo;
     }
+    //Person.getSummary();
+    //this.Person.getSummary();
+
+
 }

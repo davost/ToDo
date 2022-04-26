@@ -10,17 +10,17 @@ public class Person {
 
     public Person(int id, String firstName, String lastName, String email) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
     }
 
     //public void getSummary(this.Person) {
     //    return Person;
     //}
 
-    public void getSummary(Person Person) {
-        return;
+    public String getSummary() {
+        return " {id: "+ id +"," + "name: " + firstName + " " + lastName + "email: " + email + "}";
     }
 
     public int getId() {
@@ -36,6 +36,7 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
+        if (firstName == null) throw new IllegalArgumentException("First name must not be null");
         this.firstName = firstName;
     }
 
@@ -44,6 +45,7 @@ public class Person {
     }
 
     public void setLastName(String lastName) {
+        if (lastName == null) throw new IllegalArgumentException("Last name must not be null");
         this.lastName = lastName;
     }
 
@@ -52,6 +54,7 @@ public class Person {
     }
 
     public void setEmail(String email) {
+        if (email == null) throw new IllegalArgumentException("Email must not be null");
         this.email = email;
     }
 //public void getSummary(int, String, String, String) {

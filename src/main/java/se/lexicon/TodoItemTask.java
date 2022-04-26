@@ -4,7 +4,9 @@ public class TodoItemTask {
 
     private int id;
     private Person assignee = new Person();
-    private boolean assigned;
+    private boolean assigned(String assignee) {
+        return true;
+    };
     TodoItem toDo = new TodoItem();
 
     public TodoItemTask() {
@@ -27,7 +29,7 @@ public class TodoItemTask {
     }
 
     public boolean isAssigned() {
-        return assigned;
+        return true;
     }
 
     public void setAssigned(boolean assigned) {

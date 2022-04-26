@@ -13,8 +13,9 @@ public class TodoItem {
     private LocalDate today = LocalDate.now();
 
     public boolean isOverdue() {
-        if (today > deadline)
-        return true;
+        if (this.today.isAfter(this.deadline))
+            return true;
+    }
 
     public int getId() {
         return id;
@@ -62,5 +63,13 @@ public class TodoItem {
 
     public void setCreator(Person creator) {
         this.creator = creator;
+    }
+
+    public LocalDate getToday() {
+        return today;
+    }
+
+    public void setToday(LocalDate today) {
+        this.today = today;
     }
 }

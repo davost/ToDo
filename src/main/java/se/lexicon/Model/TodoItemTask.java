@@ -1,4 +1,6 @@
-package se.lexicon;
+package se.lexicon.Model;
+
+import java.util.Objects;
 
 public class TodoItemTask {
 
@@ -7,9 +9,10 @@ public class TodoItemTask {
     private boolean assigned;
     TodoItem toDo = new TodoItem();
 
-    public  String getSummary() {
-        return "{id: " + id + " assigned to " + assignee + " assigned? " + assigned + "}";
-    }
+    //public  String getSummary() {
+    //    return "{id: " + id + " assigned to " + assignee + " assigned? " + assigned + "}";
+    //}
+
 
     public TodoItemTask() {
     }
@@ -61,5 +64,25 @@ public class TodoItemTask {
     //Person.getSummary();
     //this.Person.getSummary();
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TodoItemTask that = (TodoItemTask) o;
+        return id == that.id && assigned == that.assigned && toDo.equals(that.toDo);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, assigned, toDo);
+    }
+
+    @Override
+    public String toString() {
+        return "TodoItemTask{" +
+                "id=" + id +
+                ", assigned=" + assigned +
+                ", toDo=" + toDo +
+                '}';
+    }
 }

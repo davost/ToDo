@@ -1,9 +1,21 @@
-package se.lexicon;
+package se.lexicon.Model;
+
+import java.util.Objects;
 
 public class Person {
 
     private int id;
     private String firstName, lastName, email;
+
+    AppUser credentials = new AppUser();
+
+    public AppUser getCredentials() {
+        return credentials;
+    }
+
+    public void setCredentials(AppUser credentials) {
+        this.credentials = credentials;
+    }
 
     public Person() {
     }
@@ -15,15 +27,7 @@ public class Person {
         setEmail(email);
     }
 
-    //public void getSummary(this.Person) {
-    //    return Person;
-    //}
-
-    public String getSummary() {
-        return " {id: "+ id +"," + "name: " + firstName + " " + lastName + "email: " + email + "}";
-    }
-
-    public int getId() {
+   public int getId() {
         return id;
     }
 
@@ -57,11 +61,35 @@ public class Person {
         if (email == null) throw new IllegalArgumentException("Email must not be null");
         this.email = email;
     }
-//public void getSummary(int, String, String, String) {
-    //    //System.out.println(this.id + this.firstName + this.lastName + this.email);
-    //    return this.id, this.firstName, this.lastName, this.email;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id && firstName.equals(person.firstName) && lastName.equals(person.lastName) && email.equals(person.email);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, email);
+    }
+
+    //public void getSummary(int, String, String, String) {
+    //    //System.out.println(this.id + this.firstName + this.lastName + this.email);
+    //    return this.id, this.firstName, this.lastName, this.email;
+    //}
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+}
     //public void getSummary() {
     //   System.out.println(id + firstName + lastName +email);
 //}

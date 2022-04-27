@@ -1,5 +1,9 @@
 package se.lexicon;
 
+import se.lexicon.Model.Person;
+import se.lexicon.Model.TodoItem;
+import se.lexicon.Model.TodoItemTask;
+
 import java.time.LocalDate;
 
 public class App {
@@ -17,11 +21,15 @@ public class App {
         TodoItemTask todoItemTask2 = new TodoItemTask(2, erik, task2);
 
         System.out.println(todoItemTask1.isAssigned());
-        System.out.println(erik.getSummary());
-        System.out.println(david.getSummary().trim());
+        //System.out.println(erik.getSummary());
+        //System.out.println(david.getSummary().trim());
+        //System.out.println(task1.getSummary());
+        System.out.println(task2.toString());
+        //david.toString();
+        //task2.toString();
+
         System.out.println(task1.getTitle() + " " + "Is task overdue? " + task1.isOverdue() + ". Tasks to do: " + task1.getDescription());
-        System.out.println(task1.getSummary());
-        System.out.println(todoItemTask1.getSummary());
+        //System.out.println(todoItemTask1.getSummary()); //*************getting unwanted output "assigned to se.lexicon.Model.Person@5e9f23b4"
 
     }
 }

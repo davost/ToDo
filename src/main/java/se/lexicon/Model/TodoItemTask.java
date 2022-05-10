@@ -12,8 +12,6 @@ public class TodoItemTask {
     //public  String getSummary() {
     //    return "{id: " + id + " assigned to " + assignee + " assigned? " + assigned + "}";
     //}
-
-
     public TodoItemTask() {
     }
 
@@ -44,7 +42,6 @@ public class TodoItemTask {
             setAssigned(false);
         }
     }
-
     public boolean isAssigned() {
         return assigned;
     }

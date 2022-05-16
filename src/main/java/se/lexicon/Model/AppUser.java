@@ -1,6 +1,6 @@
 package se.lexicon.Model;
 
-//import com.sun.xml.internal.ws.developer.MemberSubmissionAddressing;
+
 
 import se.lexicon.util.Validation;
 
@@ -16,8 +16,7 @@ public class AppUser {
     }
 
     public void setUsername(String username) {
-        //if (username == null) throw new IllegalArgumentException("Username must not be null");
-        Validation.checkStringNotNull.andThen(Validation.checkNotEmpty).accept(username, "Username");
+        if (username == null) throw new IllegalArgumentException("Username must not be null");
         this.username = username;
     }
 

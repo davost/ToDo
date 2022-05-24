@@ -27,7 +27,14 @@ public class Person {
         setEmail(email);
     }
 
-   public int getId() {
+    public Person(String firstName, String lastName, String email, AppUser credentials) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.credentials = credentials;
+    }
+
+    public int getId() {
         return id;
     }
 

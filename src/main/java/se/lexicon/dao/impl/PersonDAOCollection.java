@@ -40,16 +40,24 @@ public class PersonDAOCollection implements PersonDAO {
 
     @Override
     public Person findByEmail(String email) {
-        return null;
+        if (email == null) throw new IllegalArgumentException("Email is null");
+        for (Person element : people) {
+            if(element.getEmail().equals(email)) {
+                return element;
+            }
+        }
+            return null;
     }
 
     @Override
     public List<Person> findAll() {
-        return null;
+        return people;
     }
-
+    /*
     @Override
-    public void remove(Person person) {
+    public void remove(int id) {
+        PersonDAO person = findByID(id);
+        if (findByID(int) != 0) { person.
 
-    }
+    }*/
 }

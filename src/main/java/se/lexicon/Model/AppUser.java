@@ -15,6 +15,15 @@ public class AppUser {
         return username;
     }
 
+    public AppUser() {
+    }
+
+    public AppUser(String username, String password, AppRoll role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
     public void setUsername(String username) {
         if (username == null) throw new IllegalArgumentException("Username must not be null");
         this.username = username;

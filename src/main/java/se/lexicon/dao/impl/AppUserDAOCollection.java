@@ -20,7 +20,7 @@ public class AppUserDAOCollection implements AppUserDAO {
         if (findByUsername(appUser.getUsername()) != null)
             throw new IllegalArgumentException("Username" + appUser.getUsername() + " is already taken");
         appUsers.add(appUser);
-        return null;
+        return appUser;
     }
 
     @Override

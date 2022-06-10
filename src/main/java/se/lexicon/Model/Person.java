@@ -1,8 +1,11 @@
 package se.lexicon.Model;
 
+import se.lexicon.dao.PersonDAO;
+
+import java.util.Collection;
 import java.util.Objects;
 
-public class Person {
+public class Person implements PersonDAO {
 
     private int id;
     private String firstName, lastName, email;
@@ -95,6 +98,31 @@ public class Person {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    @Override
+    public Person persist(Person person) {
+        return null;
+    }
+
+    @Override
+    public Person findByID(int id) {
+        return null;
+    }
+
+    @Override
+    public Person findByEmail(String email) {
+        return null;
+    }
+
+    @Override
+    public Collection<Person> findAll() {
+        return null;
+    }
+
+    @Override
+    public void remove(int id) {
+
     }
 }
     //public void getSummary() {

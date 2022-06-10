@@ -1,6 +1,5 @@
 package se.lexicon.dao.impl;
 
-import se.lexicon.Model.Person;
 import se.lexicon.Model.TodoItem;
 import se.lexicon.dao.TodoItemDAO;
 
@@ -46,7 +45,18 @@ public class ToDoitemDAOCollection implements TodoItemDAO {
         } else {
             System.out.println("Task is not done.");
         }
+        return null;
      }
+
+    @Override
+    public List<TodoItem> findByTitleContains(String title) {
+        return null;
+    }
+
+    @Override
+    public List<TodoItem> findByPersonId(int personId) {
+        return null;
+    }
 
      /*
     @Override //?????????????????????
@@ -77,6 +87,11 @@ public class ToDoitemDAOCollection implements TodoItemDAO {
     @Override
     public List<TodoItem> findByDeadlineAfter(LocalDate date) {
         return null;
+    }
+
+    @Override
+    public void remove(int id) {
+
     }
     /*
     @Override

@@ -9,9 +9,11 @@ import java.util.List;
 
 public class PersonDAOCollection implements PersonDAO {
 
-   private List<Person> people;
+    private List<Person> people;
 
-    public PersonDAOCollection() {people = new ArrayList<>();}
+    public PersonDAOCollection() {
+        people = new ArrayList<>();
+    }
 
     //unable to use right click generate "implement methods"...OK, now it works :/
 
@@ -42,22 +44,25 @@ public class PersonDAOCollection implements PersonDAO {
     public Person findByEmail(String email) {
         if (email == null) throw new IllegalArgumentException("Email is null");
         for (Person element : people) {
-            if(element.getEmail().equals(email)) {
+            if (element.getEmail().equals(email)) {
                 return element;
             }
         }
-            return null;
+        return null;
     }
 
     @Override
     public List<Person> findAll() {
         return people;
     }
-    /*
+
     @Override
     public void remove(int id) {
-        PersonDAO person = findByID(id);
-        if (findByID(int) != 0) { person.
+        Person result = findByID(id);
+        if (result!= null) {
+            people.remove(result);
+        }
+    }
 
-    }*/
+
 }
